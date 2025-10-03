@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif, Courier, monospace, sans-serif;
+}
+
+
+header {
+    padding: 25px;
+
+}
+
+nav {
+    background-color: #ff0000;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 10px;
+    border-top: #e2dfdf 3px solid;
+    
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;    
+}
+
+nav a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#link-voce {
+    color: #ff0000;
+    margin-left: 30px;
+    font-size: 20px;
+    font-weight: normal;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#link-voce:hover {
+    text-decoration: underline;
+}
+
+#link-empresa {
+    color: #000000;
+    margin-left: 30px;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#link-empresa:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    width: 130px;
+    height: auto;
+}
+
+.slider {
+    overflow-x: hidden;
+    width: 100%;
+    height: auto;
+
+
+}
+
+.content {
+    display: flex;
+    width: fit-content;
+    border-radius: 20px;
+}
+
+.img1 {
+    width: 100%;
+}
+.img2 {
+    width: 100%;
+}
+
+content img {
+    width: 900px;
+    height: 500px;
+    object-fit: cover;
+
+}
+
+
+h3 {
+    margin-left: 200px;
+    margin-top: 60px;
+    font-size: 40px;
+    font-weight: normal;
+}
+
+ul {
+    list-style: none; /* Remove os marcadores da lista */
+    display: flex;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 30px; /* Espaçamento entre os itens */
+    padding: 70px;
+}
+
+
+li {
+    text-align: center;
+    height: 190px; /* Altura fixa para os itens da lista */
+    width: 190px; /* Largura fixa para os itens da lista */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; /* Sombra */
+    padding: 25px;
+    display: inline-block; /* Exibe os itens em linha */ 
+
+}
+
+li:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; /* Sombra ao passar o mouse */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+.imagens-produto {
+    width: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block; /* Centraliza a imagem */
+    
+
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
