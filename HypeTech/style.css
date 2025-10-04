@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inclui o padding e a borda na largura e altura totais do elemento */
+    list-style: none; /* Remove os marcadores das listas */
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: #0f0f1e;
+    color: #fff;
+    overflow: hidden; /* Esconde tudo que “sai para fora” da área do elemento.*/
+
+}
+
+header {
+    position: fixed;
+    width: 90vw; /* 90% da largura da viewport */
+    top: 0; /* Fixa o header no topo */
+    padding: 20px 50px; /* Espaçamento interno */
+    display: flex; /* Define um contêiner flexível */
+    justify-content: space-between; /* Espaça os itens igualmente */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    z-index: 3; /* Garante que o header fique acima de outros elementos */
+}
+
+.logo {
+    font-family: "Orbitron", sans-serif;
+    font-size: 2rem; /* Tamanho da fonte */
+    font-weight: 900; /* Peso da fonte */
+    color: #00f7ff;
+    text-shadow: 0 0 10px #00f7ff; /* Adiciona um brilho ao texto */
+
+}
+
+header nav ul {
+    display: flex; /* Define um contêiner flexível */
+    gap: 48px; /* Espaçamento entre os itens */
+}
+
+header nav ul li {
+    cursor: pointer; /* Muda o cursor para indicar que o item é clicável */
+    position: relative; /* Necessário para o pseudo-elemento */
+    padding: 5px 0; /* Espaçamento interno */
+}
+
+header nav ul li::after {
+    content:''; /* Conteúdo vazio */
+    position: absolute; /* Posição absoluta em relação ao pai */
+    left: 0; /* Alinha à esquerda */
+    bottom: 0; /* Alinha à base */
+    width: 0px; /* Largura inicial */
+    height: 2px; /* Altura da linha */
+    background-color: #00f7ff; /* Cor da linha */
+}
+header nav ul li:hover::after {
+    width: 100%; /* Expande a linha para a largura total do item */
+    transition: width 0.3s ease-in-out; /* Animação suave */
+}
+
+.container {
+  height: 100vh; /* Altura total da viewport */
+  position: relative; /* Necessário para o posicionamento absoluto dos filhos */
+  background: linear-gradient(135deg, #0f0f1e 0%, #1f1f3a 100%); /* Gradiente de fundo */;
+    overflow: hidden; /* Esconde tudo que “sai para fora” da área do elemento. */
+}
+
+.container::before {
+    content: '';
+    position: absolute; /* Posição absoluta em relação ao pai */
+    width: 500px; /* Largura do círculo */
+    height: 500px; /* Altura do círculo */
+    border-radius: 50%; /* Torna o elemento circular */
+    background: radial-gradient(circle, rgba(0, 247, 255, 0.2) 0%, rgba(15, 15, 30, 0) 70%);
+    top: 50% ; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a posição para centralizar */
+    filter: blur(50px); /* Aplica um desfoque */
+    z-index: 1; /* Garante que o círculo fique atrás do conteúdo */
+    animation: pulse 4s infinite alternate; /* Animação de pulso */
+}
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+}
+
+.list {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    position: relative; /* Necessário para o posicionamento absoluto dos filhos */
+
+}
+
+.item {
+    position: absolute; /* Posição absoluta em relação ao pai */
+    inset: 0; /* Define todos os lados como 0 */
+    display: flex; /* Define um contêiner flexível */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    opacity: 0; /* Inicialmente invisível */
+    transform:translateX(100vw); /* Move o item para fora da tela */;
+    transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out; /* Animação suave */
+}
+
+.active {
+    opacity: 1;
+    transform: translateX(0); /* Move o item para a posição original */
+}
+
+.product-img {
+    width: 45%; /* Largura da imagem */
+    height:100%; /* Altura da imagem */
+    display: flex; /* Define um contêiner flexível */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    position: relative;
+    z-index: 2; /* Garante que a imagem fique acima do círculo */
+}
+
+.product-img img {
+    max-width: 80%; /* Largura máxima da imagem */
+    max-height: 60%; /* Altura máxima da imagem */
+    filter: drop-shadow(0 0 30px rgba(0, 247, 255, 0.3)); /* Adiciona uma sombra */
+    transform: translateX(200px);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transition-delay: 0.6s;
+}
+
+.active .product-img img{
+    transform: translate(0);
+    opacity: 1;
+
+}
+
+.content {
+    width: 55%; /* Largura do conteúdo */
+    padding-right: 80px; /* Espaçamento à direita */
+    display: flex; /* Define um contêiner flexível */
+    align-items: flex-start; /* Alinha os itens ao início */
+    justify-content: center; /* Centraliza horizontalmente */
+    z-index: 2; /* Garante que o conteúdo fique acima do círculo */
+    flex-direction: column; /* Alinha os itens em coluna */
+}
+
+.product-tag {
+    font-size: 1rem; /* Tamanho da fonte */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    color: #00f7ff;
+    font-weight: 600; /* Peso da fonte */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+    margin-bottom: 10px; /* Espaçamento inferior */
+}
+
+.product-name {
+    font-family: "Orbitron", sans-serif;
+    font-size: 4.5rem; /* Tamanho da fonte */
+    line-height: 1.1; /* Altura da linha */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    transform: translateX(200px);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transition-delay: 0.6s;
+}
+
+.active .product-name{
+    transform: translate(0);
+    opacity: 1;
+}
+
+.description {
+    font-size: 1.1rem; /* Tamanho da fonte */
+    color: #b8b8d0;
+    line-height: 1.6; /* Altura da linha */
+    margin-bottom: 30px; /* Espaçamento inferior */
+    max-width: 600px; /* Largura máxima */
+    transform: translateX(200px);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transition-delay: 0.6s;
+}
+
+.active .description{
+    transform: translate(0);
+    opacity: 1;
+}
+
+.btn {
+    padding: 12px 16px;
+    background: linear-gradient(90deg, #00f7ff 0%, #0066ff 100%); /* Gradiente de fundo */
+    border-radius: 30px; /* Bordas arredondadas */
+    color: #000;
+    font-size: 600; /* Peso da fonte */
+    cursor: pointer; /* Muda o cursor para indicar que o botão é clicável */
+    border: none; /* Remove a borda */
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #0066ff 0%, #00f7ff 100%); /* Inverte o gradiente ao passar o mouse */
+    transition: all 0.3s ease-in-out; /* Animação suave */
+
+}
+
+.arrow {
+    position: absolute; /* Posição absoluta em relação ao pai */
+    width: 90%; /* Largura do contêiner */
+    display: flex; /* Define um contêiner flexível */
+    justify-content: space-between; /* Espaça os itens igualmente */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a posição para centralizar */
+    z-index: 5; /* Garante que as setas fiquem acima de outros elementos */
+}
+
+.arrow-btn {
+    width: 50px;    
+    height: 50px;
+    border-radius: 50%; /* Torna o botão circular */
+    cursor: pointer; /* Muda o cursor para indicar que o botão é clicável */
+    background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+    border: 1px solid rgba(0, 247, 255, 0.3); /* Borda semi-transparente */
+    
+
+}
+
+.arrow-btn:hover {
+    background: rgba(0, 247, 255, 0.1); /* Muda o fundo ao passar o mouse */
+    border: 1px solid rgba(0, 247, 255, 0.6); /* Muda a borda ao passar o mouse */
+    transition: all 0.3s ease-in-out; /* Animação suave */
+}
+
+.indicators {
+    position: absolute; /* Posição absoluta em relação ao pai */
+    bottom: 40px; /* Espaçamento inferior */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta a posição para centralizar */
+    display: flex; /* Define um contêiner flexível */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    gap: 15px; /* Espaçamento entre os itens */
+    z-index: 5; /* Garante que os indicadores fiquem acima de outros elementos*/
+    flex-direction: column;
+}
+
+.numbers {
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 3rem;
+    font-weight: 800px; 
+    color: rgba(255, 255, 255, 0.2); /* Cor semi-transparente */
+
+}
+
+.dots {
+    display: flex; /* Define um contêiner flexível */
+    gap: 10px; /* Espaçamento entre os pontos */
+}
+
+.dot {
+    width: 40px; /* Largura do ponto */
+    height: 4px; /* Altura do ponto */
+    background-color: rgba(255, 255, 255, 0.2); /* Cor semi-transparente */
+    border-radius: 2px; /* Bordas arredondadas */;
+}
+
+.dot.active {
+    background-color: #00f7ff; /* Cor do ponto ativo */
+    width: 60px; /* Largura do ponto ativo */
+    transition: width 0.3s ease-in-out; /* Animação suave */
+}
+
+.tech-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Esconde tudo que “sai para fora” da área do elemento.*/
+}
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 247, 255, 0.2);
+}
+
+.circle:nth-child(1) {
+    width: 200px;   
+    height: 200px;
+    top: 10%;
+    left: 10%;
+}
+
+.circle:nth-child(2) {
+    width: 300px;
+    height: 300px;
+    top: 60%;
+    left: 80%;
+}
+
+.circle:nth-child(3){
+    width: 150px;
+    height: 150px;
+    top: 70%;
+    left: 20%;
+}
+
+.circle:nth-child(4){
+    width: 120px;
+    height: 120px;
+    top: 20%;
+    left: 70%;
+}

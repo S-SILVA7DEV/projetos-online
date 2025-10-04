@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <title>HypeTech Store</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">HypeTech Store</div>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Produtos</li>
+                <li>Contatos</li>
+            </ul>
+        </nav>
+    </header>
+        <main class="container">
+            <div class="tech-circle">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            
+            </div>
+
+            <div class="list">
+                <div class="item active "> <!-- Active para deixar o primeiro item selecionado -->
+                    <div class="product-img">
+                        <img src="imagens/apple-watch.png" alt=" Apple Watch">
+                    </div>
+                    <div class="content">
+                        <h2 class="product-tag">Novo Lançamento</h2>
+                        <p class="product-name">Apple Watch Series 10</p>
+                        <p class="desciption">O Apple Watch Series 6 é um smartwatch avançado que oferece monitoramento de saúde, rastreamento de atividades físicas e conectividade com o iPhone. Com uma tela sempre ativa, sensores de oxigênio no sangue e ECG, ele ajuda você a manter um estilo de vida saudável e conectado.</p>
+                        <button class="btn">Saiba Mais</button>
+
+                    </div>
+
+                </div>
+
+                <div class="item">
+                    <div class="product-img"> <!-- Imagem do produto -->
+                        <img src="imagens/air-pods.png" alt=" Air Pods Max">
+                    </div>
+                    <div class="content">
+                        <h2 class="product-tag">Som Premium</h2>
+                        <p class="product-name">Air Pods Max</p>
+                        <p class="desciption"> Experimente o som em sua forma mais pura. Cancelamento de Ruído adaptativo, qualidade de áudio excepcional e design ergonõmico para o máximo conforto. Sua música nunca soou tão bem. </p>
+                        <button class="btn">Saiba Mais</button>
+
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="product-img">
+                        <img src="imagens/vision-pro.png" alt=" Vision Pro">
+                    </div>
+                    <div class="content">
+                        <h2 class="product-tag">Alta Performace</h2>
+                        <p class="product-name">Vision Pro</p>
+                        <p class="desciption"> Realidade aumentada imersiva com o Apple Vision pro: inovação ao alcance dos olhos. </p>
+                        <button class="btn">Saiba Mais</button>
+                        
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                <button class="arrow-btn" id="prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                    <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                    </svg>
+                </button>
+
+                <button class="arrow-btn" id="next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                    </svg>
+            </button>
+            </div>
+            <div class="indicators">
+                <div class="numbers">01</div>
+                <div class="dots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+
+            </div>
+        </main>
+</body>
+</html>
